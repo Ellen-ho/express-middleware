@@ -1,5 +1,6 @@
 // app.js
 const express = require('express')
+const dayjs = require('dayjs')
 const app = express()
 const port = 3000
 
@@ -7,6 +8,14 @@ const port = 3000
 // 在路由系統中，對所有請求設定統一前置處理
 // 瞭解時間戳記的相關方法
 // 伺服器接到任一請求時，server log 上能正確印出時間、印出請求中的 HTTP 與網址
+app.use(function (req, res, next) {
+    const timeStamp = dayjs().format('YYYY-MM-DD HH:mm:ss')
+    const requestType = req.method
+    const url = req.originalUrl
+    let log = `${timeStamp} | ${requestType} from ${url}`
+    console.log(log);
+    next();
+});
 
 app.get('/', (req, res) => {
     res.send('列出全部 Todo')

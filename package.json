@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Ellen-ho/express-middleware#readme",
   "dependencies": {
+    "dayjs": "^1.9.6",
     "express": "^4.17.1"
   }
 }
