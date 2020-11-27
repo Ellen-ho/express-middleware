@@ -15,7 +15,7 @@
 - 打開終端機進入到下載的資料夾
 
   ```
-  cd restaurant_list
+  cd express-middleware
   ```
 
 - 執行指令安裝所需套件
