@@ -5,10 +5,8 @@ const app = express()
 const port = 3000
 
 // Required log format: 2019-5-17 18:51:12 | GET from /
-// 在路由系統中，對所有請求設定統一前置處理
-// 瞭解時間戳記的相關方法
-// 伺服器接到任一請求時，server log 上能正確印出時間、印出請求中的 HTTP 與網址
 app.use(function (req, res, next) {
+  // 使用 dayjs 整理時間格式
   const timeStamp = dayjs().format('YYYY-MM-DD HH:mm:ss')
   const requestType = req.method
   const requestUrl = req.originalUrl
